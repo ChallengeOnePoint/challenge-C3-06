@@ -55,12 +55,14 @@ class Redis {
       console.log("get")
       this.client.get(key, (err, reply) => {
         if (err) {
-          return Promise.reject(err);
+          reject(err);
         }
 
         const content = JSON.parse(reply);
 
-        return Promise.resolve(content);
+        console.log("content: ", content)
+
+        resolve(content);
       });
     });
   }

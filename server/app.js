@@ -17,7 +17,6 @@ const Redis   = require("./managers/redis");
 
 class App {
   constructor() {
-    console.log("server: ", server)
     this.server = server;
 
     this.socket = new Socket(this);
@@ -31,34 +30,21 @@ class App {
 }
 
 
-const app = new App();
+//const app = new App();
 
-const todo = app.redis.add_todo({
-  name: "toto",
-  value: "test",
-});
-
-console.log("todo set: ", todo)
-
-app.redis.get_todo(todo.id)
-.then((todo) => {
-console.log("get: ", todo);
-})
-
-//client1.on("subscribe", function (channel, count) {
+//const todo = app.redis.add_todo({
+  //name: "toto",
+  //value: "test",
 //});
 
-//client1.on("message", function (channel, message) {
-    //console.log("client1 channel " + channel + ": " + message);
-    //msg_count += 1;
-    //if (msg_count === 3) {
-        //client1.unsubscribe();
-        //client1.end();
-        //client2.end();
-    //}
-//});
+//console.log("todo set: ", todo)
 
-//client1.subscribe("a nice channel");
-//
+//app.redis.get_todo(todo.id)
+//.then((todo) => {
+//console.log("end get: ", todo);
+//})
+//.catch((reason) => {
+//console.error(reason);
+//});
 
 module.exports = new App();
