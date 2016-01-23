@@ -33,6 +33,10 @@ class Io {
       });
 
       socket.on("get_todos", (data) => {
+        return this._app.redis.get_todos()
+        .then((list_todo) => {
+          this.socket.emit("todos", list_todo);
+        });
 
       });
 
