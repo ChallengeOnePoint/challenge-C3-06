@@ -86,7 +86,7 @@ class Redis {
 
 
   __remove(key) {
-    this.client.del(key);
+    this.client.hdel("todo", key);
   }
 }
 
