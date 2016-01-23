@@ -12,15 +12,19 @@
             <div class="card-content white-text">
               <span class="card-title">{{card.title}}</span>
               <p>{{card.description}}</p>
+              <div class="chip">
+                <img src="{{card.avatar}}" alt="Contact Person">
+                {{card.email}}
               </div>
-              <div class="card-action">
-                <a ng-click="modifyCard($index)" class="white-text">Edit</a>
-                <a ng-click="deleteCard($index)" class="red-text text-darken-3">Remove</a>
-              </div>
+            </div>
+            <div class="card-action">
+              <a ng-click="modifyCard(card)" class="white-text">Edit</a>
+              <a ng-click="deleteCard(card)" class="red-text text-darken-3">Remove</a>
             </div>
           </div>
         </div>
       </div>
+    </div>
   </div>
   <div class="col l4 m4 s4">
     <nav>
@@ -35,15 +39,15 @@
             <div class="card-content white-text">
               <span class="card-title">{{card.title}}</span>
               <p>{{card.description}}</p>
-              </div>
-              <div class="card-action">
-                <a ng-click="modifyCard($index)" class="white-text">Edit</a>
-                <a ng-click="deleteCard($index)" class="red-text text-darken-3">Remove</a>
-              </div>
+            </div>
+            <div class="card-action">
+              <a ng-click="modifyCard(card)" class="white-text">Edit</a>
+              <a ng-click="deleteCard(card)" class="red-text text-darken-3">Remove</a>
             </div>
           </div>
         </div>
       </div>
+    </div>
   </div>
   <div class="col l4 m4 s4">
     <nav>
@@ -58,34 +62,34 @@
             <div class="card-content white-text">
               <span class="card-title">{{card.title}}</span>
               <p>{{card.description}}</p>
-              </div>
-              <div class="card-action">
-                <a ng-click="modifyCard($index)" class="white-text">Edit</a>
-                <a ng-click="deleteCard($index)" class="red-text text-darken-3">Remove</a>
-              </div>
+            </div>
+            <div class="card-action">
+              <a ng-click="modifyCard(card)" class="white-text">Edit</a>
+              <a ng-click="deleteCard(card)" class="red-text text-darken-3">Remove</a>
             </div>
           </div>
         </div>
       </div>
+    </div>
   </div>
 </div>
 
-  <div class="fixed-btn-floating vertical click-to-toggle fixed-action-btn">
-    <a class="btn-floating btn-large waves-effect waves-light blue">
-      <i class="material-icons">add</i>
-    </a>
-    <ul>
-      <li>
-        <a class="btn-floating red" ng-click="openModalAdd('todo')">TODO</a>
-      </li>
-      <li>
-        <a class="btn-floating yellow darken-1" ng-click="openModalAdd('doing')">DOING</a>
-      </li>
-      <li>
-        <a class="btn-floating green" ng-click="openModalAdd('done')">DONE</a>
-      </li>
-    </ul>
+<div class="fixed-btn-floating vertical click-to-toggle fixed-action-btn">
+  <a class="btn-floating btn-large waves-effect waves-light blue">
+    <i class="material-icons">add</i>
+  </a>
+  <ul>
+    <li>
+      <a class="btn-floating red" ng-click="openModalAdd('todo')">TODO</a>
+    </li>
+    <li>
+      <a class="btn-floating yellow darken-1" ng-click="openModalAdd('doing')">DOING</a>
+    </li>
+    <li>
+      <a class="btn-floating green" ng-click="openModalAdd('done')">DONE</a>
+    </li>
   </ul>
+</ul>
 </div>
 
 <div id="modalAdd" class="modal">
