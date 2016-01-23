@@ -30,21 +30,52 @@ class App {
 }
 
 
-//const app = new App();
+const app = new App();
 
-//const todo = app.redis.add_todo({
-  //name: "toto",
-  //value: "test",
-//});
+let todo = app.redis.add_todo({
+  name: "toto",
+  value: "test",
+});
 
-//console.log("todo set: ", todo)
+console.log("todo set: ", todo)
+app.redis.get_todos()
+.then((todos) => {
+  console.log("todos 2: ", todos)
+})
 
 //app.redis.get_todo(todo.id)
-//.then((todo) => {
-//console.log("end get: ", todo);
+//.then((res) => {
+  //todo = res;
+  //console.log("end get: ", todo);
+//})
+//.then(() => {
+  //const todo2 = app.redis.update_todo({
+    //id: todo.id,
+    //name: "toto_update",
+    //value: "test_update",
+    //update: "true"
+  //});
+
+  //console.log("todo set: ", todo2)
+
+  //app.redis.get_todo(todo2.id)
+  //.then((todo) => {
+    //console.log("end get: ", todo);
+  //})
+  //.then(() => {
+    //app.redis.remove_todo(todo2.id);
+    //app.redis.get_todo(todo.id)
+    //.then((todo) => {
+      //console.log("end get: ", todo);
+    //})
+  //})
+  //.catch((reason) => {
+    //console.error(reason);
+  //});
+
 //})
 //.catch((reason) => {
-//console.error(reason);
+  //console.error(reason);
 //});
 
 module.exports = new App();
