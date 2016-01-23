@@ -5,7 +5,10 @@ const SocketIo = require("socket.io");
 
 class Io {
   constructor(app) {
-    this.io = SocketIo(app);
+    this._app = app;
+
+    this.io = SocketIo(this.server);
+
     this.__set_listeners();
   }
 
@@ -17,7 +20,8 @@ class Io {
 
       socket.join("todo");
 
-      socket.on("set_todo", (data) => {
+      socket.on("add_todo", (data) => {
+        this._app.redis.add_todo(data);
 
       });
 
@@ -25,15 +29,15 @@ class Io {
 
       });
 
+      socket.on("update_todo", (data) => {
+
+      });
+
       socket.on("get_todos", (data) => {
 
       });
 
-      socket.on("add_todo", (data) => {
-
-      });
-
-      socket.on("update_todo", (data) => {
+      socket.on("remove_todos", (data) => {
 
       });
 

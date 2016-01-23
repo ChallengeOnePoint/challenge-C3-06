@@ -11,19 +11,24 @@
 "use strict"
 
 
-const app     = require('http').createServer();
+const server  = require('http').createServer();
 const Socket  = require("./managers/io");
+const Redis   = require("./managers/redis");
 
 class App {
   constructor() {
+    this.server = server;
 
-    this.socket = new Socket(app);
+    this.socket = new Socket(this);
+    this.redis  = new Redis(this);
+
+
+    server.listen(3000, () => {
+      console.log("Init server on port 3000");
+    });
   }
 }
 
-app.listen(3000, () => {
-  console.log("Init server on port 3000");
-});
 
 //client1.on("subscribe", function (channel, count) {
 //});
