@@ -19,4 +19,14 @@ angular.module('todoApp')
     $scope.addTodo({
       title : "test"
     });
+
+    $scope.openModalAdd = function(){
+      $('#modalAdd').openModal();
+
+      /*
+      $scope.addTodo({
+        title : "test"
+      });*/
+
+    }
   });
