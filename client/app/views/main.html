@@ -8,8 +8,8 @@
     <div ng-repeat="card in todos  | filter: { type: 'todo' } track by $index">
       <div class="row">
         <div class="col s12 m12">
-          <div class="card teal lighten-3">
-            <div class="card-content white-text">
+          <div class="card">
+            <div class="card-content">
               <span class="card-title">{{card.title}}</span>
               <p>{{card.description}}</p>
               <div class="chip">
@@ -18,7 +18,7 @@
               </div>
             </div>
             <div class="card-action">
-              <a ng-click="modifyCard(card)" class="white-text">Edit</a>
+              <a ng-click="modifyCard(card)">Edit</a>
               <a ng-click="removeTodo(card)" class="red-text text-darken-3">Remove</a>
             </div>
           </div>
@@ -35,13 +35,13 @@
     <div ng-repeat="card in todos | filter: { type: 'doing' } track by $index">
       <div class="row">
         <div class="col s12 m12">
-          <div class="card teal lighten-3">
-            <div class="card-content white-text">
+          <div class="card">
+            <div class="card-content">
               <span class="card-title">{{card.title}}</span>
               <p>{{card.description}}</p>
             </div>
             <div class="card-action">
-              <a ng-click="modifyCard(card)" class="white-text">Edit</a>
+              <a ng-click="modifyCard(card)">Edit</a>
               <a ng-click="removeTodo(card)" class="red-text text-darken-3">Remove</a>
             </div>
           </div>
@@ -58,13 +58,13 @@
     <div ng-repeat="card in todos | filter: { type: 'done' } track by $index">
       <div class="row">
         <div class="col s12 m12">
-          <div class="card teal lighten-3">
-            <div class="card-content white-text">
+          <div class="card">
+            <div class="card-content">
               <span class="card-title">{{card.title}}</span>
               <p>{{card.description}}</p>
             </div>
             <div class="card-action">
-              <a ng-click="modifyCard(card)" class="white-text">Edit</a>
+              <a ng-click="modifyCard(card)">Edit</a>
               <a ng-click="removeTodo(card)" class="red-text text-darken-3">Remove</a>
             </div>
           </div>
