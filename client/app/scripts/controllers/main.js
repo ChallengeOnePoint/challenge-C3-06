@@ -23,14 +23,16 @@ angular.module('todoApp')
       $scope.new_todo = {};
     };
 
-    $scope.updateTodo = Api.updateTodo;
+    $scope.updateTodo = function(todo){
+      Api.updateTodo(todo);
+    };
 
     $scope.removeTodo = function(card){
       Api.removeTodo(card);
     };
 
     $('select').material_select();
-    
+
     $scope.openModalAdd = function(todoType){
       $('#modalAdd').openModal();
       $scope.new_todo.type = todoType;
