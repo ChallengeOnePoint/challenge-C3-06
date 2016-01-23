@@ -1,26 +1,22 @@
 'use strict';
 
 /**
- * @ngdoc overview
- * @name catstagramApp
+ * @ngdoc function
+ * @name todoApp.controller:MainCtrl
  * @description
- * # catstagramApp
- *
- * Main module of the application.
+ * # MainCtrl
+ * Controller of the todoApp
  */
 
-angular.module('catstagramApp').factory('Cats',
-  function($http, $q){
+angular.module('todoApp').factory('Api',
+  function($http, socketFactory){
     var API = {
-      getCats : function(){
-        return $q(function(resolve, reject) {
-          var url = "/images/cats/kittenIdentity.json";
-          $http.get(url)
-          .success(function(data) {
-            return resolve(data);
-          });
+      init : function(){
+        socketFactory.$on('connected', function(){
+          console.log("connected");
         });
       }
     };
+    API.init();
     return API;
   });
