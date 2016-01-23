@@ -20,7 +20,6 @@ angular.module('todoApp').factory('Api',
         });
         API.socket.on("new_todo", function(todo){
           API.todos.unshift(todo);
-          console.log("new_todo", API.todos);
           API.trigger();
         });
         API.socket.on("update_todo", function(todo){
@@ -31,7 +30,6 @@ angular.module('todoApp').factory('Api',
             index++;
           });
           API.trigger();
-          console.log("update_todo", API.todos);
         });
         API.socket.on("remove_todo", function(todo){
           var index = 0;
@@ -41,7 +39,6 @@ angular.module('todoApp').factory('Api',
             index++;
           });
           API.trigger();
-          console.log("remove_todo", API.todos);
         });
         API.socket.on("todos", function(todos){
           API.todos = [];
