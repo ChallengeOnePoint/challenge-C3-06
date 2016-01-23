@@ -29,19 +29,20 @@ class Io {
       socket.on("update_todo", (data) => {
         const updated_todo = this._app.redis.update_todo(data);
 
-        this.io.in("todo").emit("updated_todo", updated_todo);
+        this.io.in("todo").emit("update_todo", updated_todo);
       });
 
       socket.on("get_todos", (data) => {
         return this._app.redis.get_todos()
         .then((list_todo) => {
-          this.socket.emit("todos", list_todo);
+          socket.emit("todos", list_todo);
         });
 
       });
 
       socket.on("remove_todos", (data) => {
-
+        this._app.redis.remove_todo(data);
+        this.io.in("todo").emit("remove_todo", data);
       });
 
     });

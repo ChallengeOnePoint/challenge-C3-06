@@ -31,7 +31,6 @@ class Redis {
 
 
   update_todo(todo) {
-    console.log("update: ", todo)
     this.__set(todo.id, todo);
     return todo;
   }
@@ -40,7 +39,6 @@ class Redis {
 
     return this.__get(todo_id)
     .catch((reason) => {
-      console.error(reason);
     });
   }
 
@@ -48,33 +46,29 @@ class Redis {
   get_todos() {
     return this.__get_all()
     .catch((reason) => {
-      console.error(reason);
     });
   }
 
 
-  remove_todo(todo_id) {
-    this.__remove(todo_id);
+  remove_todo(todo) {
+    this.__remove(todo.id);
   }
 
 
   __set(key, value) {
     const value_raw = JSON.stringify(value);
 
-    console.log("Set todo: ", key);
     this.client.hset("todo", key, value_raw);
   }
 
 
   __get(key) {
     return new Promise((resolve, reject) => {
-      console.log("get")
       this.client.hget("todo", key, (err, reply) => {
         if (err) {
           reject(err);
         }
 
-        console.log("Get todo: ", key);
         const content = JSON.parse(reply);
 
         resolve(content);
@@ -83,19 +77,15 @@ class Redis {
   }
 
 
-
   __get_all() {
     return new Promise((resolve, reject) => {
-      console.log("get")
       this.client.hgetall("todo", (err, reply) => {
         if (err) {
-          console.log(err);
           reject(err);
         }
 
         try {
-          console.log("reply: ", reply)
-          const content = JSON.parse(reply);
+          resolve(JSON.parse(reply));
         }
         catch (e) {
           resolve([]);
@@ -105,7 +95,6 @@ class Redis {
   }
 
   __remove(key) {
-    console.log("Remove todo: ", key);
     this.client.del(key);
   }
 

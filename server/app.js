@@ -19,34 +19,39 @@ class App {
   constructor() {
     this.server = server;
 
+    this.socket = new Socket(this);
+    this.redis  = new Redis(this);
+
+
     server.listen(3000, () => {
       console.log("Init server on port 3000");
     });
-
-    this.socket = new Socket(this);
-    this.redis  = new Redis(this);
   }
 }
 
 
-const app = new App();
+//const app = new App();
 
-let todo = app.redis.add_todo({
-  name: "toto",
-  value: "test",
-});
+//let todo = app.redis.add_todo({
+  //name: "toto",
+  //value: "test",
+//});
 
-console.log("todo set: ", todo)
-app.redis.get_todos()
-.then((todos) => {
-  console.log("todos 2: ", todos)
-})
+//console.log("todo set: ", todo)
+
 
 //app.redis.get_todo(todo.id)
 //.then((res) => {
   //todo = res;
   //console.log("end get: ", todo);
 //})
+
+
+//app.redis.get_todos()
+//.then((todos) => {
+  //console.log("todos 2: ", todos)
+//})
+
 //.then(() => {
   //const todo2 = app.redis.update_todo({
     //id: todo.id,
