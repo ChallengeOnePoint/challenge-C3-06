@@ -30,6 +30,8 @@ angular.module('todoApp')
       title : "test"
     });
 
+    $('select').material_select();
+    
     $scope.openModalAdd = function(todoType){
       $('#modalAdd').openModal();
       $scope.new_todo.type = todoType;
