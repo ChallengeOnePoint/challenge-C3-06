@@ -7,7 +7,7 @@ class Io {
   constructor(app) {
     this._app = app;
 
-    this.io = SocketIo(this.server);
+    this.io = SocketIo(this._app.server);
 
     this.__set_listeners();
   }
@@ -21,12 +21,12 @@ class Io {
       socket.join("todo");
 
       socket.on("add_todo", (data) => {
-        this._app.redis.add_todo(data);
+        const new_todo = this._app.redis.add_todo(data);
 
       });
 
       socket.on("get_todo", (data) => {
-
+        this._app.redis.get_todo(data);
       });
 
       socket.on("update_todo", (data) => {
