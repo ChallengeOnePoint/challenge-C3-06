@@ -116,6 +116,14 @@
   <div class="modal-content">
     <div class="row">
       <div class="input-field col s12">
+        <label>States</label>
+        <select ng-model="current_todo.type">
+          <option value="todo">Todo</option>
+          <option value="doing">Doing</option>
+          <option value="done">Done</option>
+        </select>
+      </div>
+      <div class="input-field col s12">
         <input placeholder="example@gmail.com" ng-model="current_todo.email" type="email"
         class="validate">
       </div>
