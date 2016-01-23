@@ -87,15 +87,19 @@ class Redis {
   __get_all() {
     return new Promise((resolve, reject) => {
       console.log("get")
-      this.client.hkeys("todo", (err, reply) => {
+      this.client.hgetall("todo", (err, reply) => {
         if (err) {
+          console.log(err);
           reject(err);
         }
 
-        console.log("reply: ", reply)
-        const content = JSON.parse(reply);
-
-        resolve(content);
+        try {
+          console.log("reply: ", reply)
+          const content = JSON.parse(reply);
+        }
+        catch (e) {
+          resolve([]);
+        }
       });
     });
   }
