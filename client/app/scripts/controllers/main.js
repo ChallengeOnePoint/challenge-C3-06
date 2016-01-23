@@ -20,7 +20,7 @@ angular.module('todoApp')
     };
 
     $scope.updateTodo = Api.updateTodo;
-    $scope.removeTodo = Api.removeTodo;
+    $scope.deleteCard = Api.removeTodo;
 
     $scope.addTodo({
       title : "test"
@@ -33,5 +33,9 @@ angular.module('todoApp')
       $scope.addTodo({
         title : "test"
       });*/
+    };
+    $scope.modifyCard = function(card){
+    	$('#modalUpdate').openModal();
+    	$scope.current_todo = card;
     };
   });
