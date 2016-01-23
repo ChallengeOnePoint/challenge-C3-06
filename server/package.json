@@ -1,0 +1,11 @@
+{
+  "name": "todo",
+  "private": true,
+  "engines": {
+    "node": "5.4.4"
+  },
+  "scripts": {},
+  "dependencies": {
+    "socket.io": "^1.4.4"
+  }
+}
