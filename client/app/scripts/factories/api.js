@@ -29,6 +29,10 @@ angular.module('todoApp').factory('Api',
           delete API.todos[todo.id];
           console.log("remove_todo", API.todos);
         });
+        API.socket.on("todos", function(todos){
+          console.log("todos", todos);
+          API.todos[todo.id] = todos;
+        });
 
       },
       addTodo : function(todo) {
