@@ -24,6 +24,7 @@ angular.module('todoApp')
     };
 
     $scope.updateTodo = function(todo){
+      console.log(todo);
       Api.updateTodo(todo);
     };
 
