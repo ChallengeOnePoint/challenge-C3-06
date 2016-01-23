@@ -85,7 +85,7 @@ class Redis {
         }
 
         try {
-          const content = JSON.parse(reply);
+          resolve(JSON.parse(reply));
         }
         catch (e) {
           resolve([]);
