@@ -19,13 +19,12 @@ class App {
   constructor() {
     this.server = server;
 
-    this.socket = new Socket(this);
-    this.redis  = new Redis(this);
-
-
     server.listen(3000, () => {
       console.log("Init server on port 3000");
     });
+
+    this.socket = new Socket(this);
+    this.redis  = new Redis(this);
   }
 }
 
