@@ -84,20 +84,15 @@ class Redis {
           reject(err);
         }
 
-        try {
-          resolve(JSON.parse(reply));
-        }
-        catch (e) {
-          resolve([]);
-        }
+        resolve(reply);
       });
     });
   }
 
+
   __remove(key) {
     this.client.del(key);
   }
-
 }
 
 module.exports = Redis;
