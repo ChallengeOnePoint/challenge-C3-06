@@ -23,10 +23,11 @@ angular.module('todoApp').factory('Api',
           API.trigger();
         });
         API.socket.on("update_todo", function(todo){
+          console.log("updated_todo")
           var index = 0;
           API.todos.forEach(function(_todo){
             if (_todo.id == todo.id)
-              _todo = todo;
+              API.todos[index] = todo;
             index++;
           });
           API.trigger();
