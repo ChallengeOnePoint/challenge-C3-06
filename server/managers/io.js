@@ -23,10 +23,7 @@ class Io {
       socket.on("add_todo", (data) => {
         const new_todo = this._app.redis.add_todo(data);
 
-      });
-
-      socket.on("get_todo", (data) => {
-        this._app.redis.get_todo(data);
+        this.io.in("todo").emit("new_todo", new_todo);
       });
 
       socket.on("update_todo", (data) => {
