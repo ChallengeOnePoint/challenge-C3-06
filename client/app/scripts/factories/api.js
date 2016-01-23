@@ -18,16 +18,16 @@ angular.module('todoApp').factory('Api',
           ioSocket: io.connect('http://localhost:3000')
         });
         API.socket.on("new_todo", function(data){
+          API.todos[data.id] = todo;
           console.log("new_todo", API.todos);
-          API.todos[data.id] = data.todo;
         });
         API.socket.on("update_todo", function(data){
+          API.todos[data.id] = data;
           console.log("update_todo", API.todos);
-          API.todos[data.id] = data.todo;
         });
         API.socket.on("remove_todo", function(data){
-          console.log("remove_todo", API.todos);
           delete API.todos[data.id];
+          console.log("remove_todo", API.todos);
         });
 
       },
