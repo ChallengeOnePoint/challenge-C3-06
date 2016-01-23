@@ -9,10 +9,10 @@
  */
 angular.module('todoApp')
   .controller('MainCtrl', function (Api) {
-    $scope.todos = Api.todos;
+    //$scope.todos = Api.todos;
 
     //Object Todo {}
-    $scope.addTodo = Api.addTodo;
-    $scope.updateTodo = Api.updateTodo;
-    $scope.removeTodo = Api.removeTodo;
+    //$scope.addTodo = Api.addTodo;
+    //$scope.updateTodo = Api.updateTodo;
+    //$scope.removeTodo = Api.removeTodo;
   });
