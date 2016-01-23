@@ -25,7 +25,7 @@ class Redis {
 
     todo.id = new_id;
 
-    this.__set(`todo:${new_id}`, todo);
+    this.__set(new_id, todo);
     return todo;
   }
 
