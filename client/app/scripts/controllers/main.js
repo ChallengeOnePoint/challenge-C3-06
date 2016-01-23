@@ -24,7 +24,10 @@ angular.module('todoApp')
     };
 
     $scope.updateTodo = Api.updateTodo;
-    $scope.deleteCard = Api.removeTodo;
+
+    $scope.removeTodo = function(card){
+      Api.removeTodo(card);
+    };
 
     $scope.addTodo({
       title : "test"

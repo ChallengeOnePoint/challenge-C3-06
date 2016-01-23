@@ -5,7 +5,7 @@
         <a class="brand-logo center">TODO</a>
       </div>
     </nav>
-    <div ng-repeat="card in todos | filter: { type: 'todo' }">
+    <div ng-repeat="card in todos  | filter: { type: 'todo' } track by id">
       <div class="row">
         <div class="col s12 m12">
           <div class="card teal lighten-3">
@@ -19,7 +19,7 @@
             </div>
             <div class="card-action">
               <a ng-click="modifyCard(card)" class="white-text">Edit</a>
-              <a ng-click="deleteCard(card)" class="red-text text-darken-3">Remove</a>
+              <a ng-click="removeTodo(card)" class="red-text text-darken-3">Remove</a>
             </div>
           </div>
         </div>
