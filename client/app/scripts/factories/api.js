@@ -33,6 +33,7 @@ angular.module('todoApp').factory('Api',
         });
         API.socket.on("remove_todo", function(todo){
           var index = 0;
+          console.log("api", "remove_todo");
           API.todos.forEach(function(_todo){
             if (_todo.id == todo.id)
               delete API.todos[index];
@@ -57,6 +58,7 @@ angular.module('todoApp').factory('Api',
         API.socket.emit("update_todo", todo);
       },
       removeTodo : function(todo) {
+        console.log("send remove", todo);
         API.socket.emit("remove_todo", todo);
       },
       getTodos : function(){
