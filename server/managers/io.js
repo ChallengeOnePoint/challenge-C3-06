@@ -27,7 +27,9 @@ class Io {
       });
 
       socket.on("update_todo", (data) => {
+        const updated_todo = this._app.redis.update_todo(data);
 
+        this.io.in("todo").emit("updated_todo", updated_todo);
       });
 
       socket.on("get_todos", (data) => {

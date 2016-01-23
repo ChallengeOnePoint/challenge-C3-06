@@ -30,6 +30,11 @@ class Redis {
   }
 
 
+  update_todo(todo) {
+    this.__set(`todo:${todo.id}`, todo);
+    return todo;
+  }
+
   get_todo(todo_id) {
     const key = `todo:${todo_id}`;
 
