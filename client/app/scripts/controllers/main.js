@@ -29,18 +29,11 @@ angular.module('todoApp')
       Api.removeTodo(card);
     };
 
-    $scope.addTodo({
-      title : "test"
-    });
-
     $scope.openModalAdd = function(todoType){
       $('#modalAdd').openModal();
       $scope.new_todo.type = todoType;
-      /*
-      $scope.addTodo({
-        title : "test"
-      });*/
     };
+
     $scope.modifyCard = function(card){
     	$('#modalUpdate').openModal();
     	$scope.current_todo = card;
