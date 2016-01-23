@@ -9,9 +9,13 @@
  */
 angular.module('todoApp')
   .controller('MainCtrl', function ($scope, Api) {
-    $scope.todos = Api.todos;
+    $scope.todos = [];
 
     $scope.new_todo = {};
+
+    Api.on_update(function(){
+       $scope.todos = Api.todos;
+    });
 
     //Object Todo {}
     $scope.addTodo = function(todo){
