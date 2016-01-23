@@ -76,13 +76,13 @@
     </a>
     <ul>
       <li>
-        <a class="btn-floating red">TODO</a>
+        <a class="btn-floating red" ng-click="openModalAdd('todo')">TODO</a>
       </li>
       <li>
-        <a class="btn-floating yellow darken-1">DOING</a>
+        <a class="btn-floating yellow darken-1" ng-click="openModalAdd('doing')">DOING</a>
       </li>
       <li>
-        <a class="btn-floating green">DONE</a>
+        <a class="btn-floating green" ng-click="openModalAdd('done')">DONE</a>
       </li>
     </ul>
   </ul>
@@ -92,29 +92,38 @@
   <div class="modal-content">
     <div class="row">
       <div class="input-field col s12">
-        <select>
-          <option value="" disabled selected>Choose your option</option>
-          <option value="1">Todo</option>
-          <option value="2">Doing</option>
-          <option value="3">Done</option>
-        </select>
-        <label>Materialize Select</label>
+        <input placeholder="example@gmail.com" ng-model="new_todo.email" type="email"
+        class="validate">
       </div>
-      <div class="input-field col s6">
-        <input value="Alvin" id="first_name2" type="text" class="validate">
-        <label class="active" for="first_name2">User email</label>
+      <div class="input-field col s12">
+        <input placeholder="New task for Example" ng-model="new_todo.title" type="text">
       </div>
-      <div class="input-field col s6">
-        <input value="Alvin" id="first_name2" type="text" class="validate">
-        <label class="active" for="first_name2">Title</label>
-      </div>
-      <div class="input-field col s6">
-        <textarea id="textarea1" class="materialize-textarea"></textarea>
-        <label for="textarea1">Description</label>
+      <div class="input-field col s12">
+        <input placeholder="Do a hug" ng-model="new_todo.description" type="text">
       </div>
     </div>
   </div>
   <div class="modal-footer">
-    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Send</a>
+    <a ng-click="addTodo(new_todo)" class="modal-action modal-close waves-effect waves-green btn-flat">Save</a>
+  </div>
+</div>
+
+<div id="modalUpdate" class="modal">
+  <div class="modal-content">
+    <div class="row">
+      <div class="input-field col s12">
+        <input placeholder="example@gmail.com" ng-model="current_todo.email" type="email"
+        class="validate">
+      </div>
+      <div class="input-field col s12">
+        <input placeholder="New task for Example" ng-model="current_todo.title" type="text">
+      </div>
+      <div class="input-field col s12">
+        <input placeholder="Do a hug" ng-model="current_todo.description" type="text">
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <a ng-click="updateTodo(current_todo)" class="modal-action modal-close waves-effect waves-green btn-flat">Update</a>
   </div>
 </div>
