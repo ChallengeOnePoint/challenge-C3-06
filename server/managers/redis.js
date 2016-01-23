@@ -14,11 +14,6 @@ class Redis {
     this.client = redis.createClient();
   }
 
-  set_todo(data) {
-
-  }
-
-
   add_todo(todo) {
 
     const new_id = uuid.v4();

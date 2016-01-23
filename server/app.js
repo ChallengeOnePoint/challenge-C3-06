@@ -29,13 +29,4 @@ class App {
   }
 }
 
-
-//const app = new App();
-
-
-//app.redis.get_todos()
-//.then((todos) => {
-  //console.log("todos 2: ", todos)
-//})
-
 module.exports = new App();

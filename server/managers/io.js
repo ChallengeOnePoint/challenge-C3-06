@@ -40,7 +40,7 @@ class Io {
 
       });
 
-      socket.on("remove_todos", (data) => {
+      socket.on("remove_todo", (data) => {
         this._app.redis.remove_todo(data);
         this.io.in("todo").emit("remove_todo", data);
       });
