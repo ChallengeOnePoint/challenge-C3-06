@@ -16,7 +16,8 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'btford.socket-io'
+    'btford.socket-io',
+    'ui.gravatar'
   ])
   .config(function ($routeProvider) {
     $routeProvider
