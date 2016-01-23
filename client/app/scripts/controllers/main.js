@@ -20,7 +20,7 @@ angular.module('todoApp')
       title : "test"
     });
 
-    $scope.openModalAdd = function(){
+    $scope.openModalAdd = function(todoType){
       $('#modalAdd').openModal();
 
       /*
