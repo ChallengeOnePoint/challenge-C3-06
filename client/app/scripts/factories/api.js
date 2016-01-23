@@ -11,6 +11,7 @@
 angular.module('todoApp').factory('Api',
   function($http, socketFactory){
     var API = {
+      todos : [],
       init : function(){
         socketFactory.$on('connected', function(){
           console.log("connected");
