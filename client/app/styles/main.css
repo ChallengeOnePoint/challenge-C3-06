@@ -81,3 +81,25 @@ body {
     border-bottom: 0;
   }
 }
+
+.container{
+  max-width: 95% !important;
+  width: 95% !important;
+  margin-top: 40px;
+}
+
+.todoView nav{
+    height: 44px;
+    line-height: 44px;
+}
+.todoView nav .brand-logo{
+  font-size: 1.4rem;
+}
+.fixed-btn-floating {
+  bottom: 45px;
+  right: 24px;
+  position: fixed;
+  padding-top: 15px;
+  margin-bottom: 0;
+  z-index: 998;
+}    
